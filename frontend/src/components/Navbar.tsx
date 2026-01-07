@@ -20,7 +20,7 @@ function Navbar({ serviceRefs, scrollToAbout, scrollToHome, scrollToContact }: N
     <>
       <div className='Navbar'>
         <div className='Logo'>
-            <img src="/src/assets/Multiprocess_And_Services_Alt.png"/>
+            <img src="/Multiprocess_And_Services_Alt.png"/>
         </div>
         <div className='NavLinks'>
             <button onClick={() => {scrollToHome()}}><p className='NavLink'>Inicio</p></button>

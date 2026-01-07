@@ -767,6 +767,8 @@ html {
     grid-template-columns: 1fr;
     gap: 12px;
     width: 100%;
+    justify-items: center;
+    align-items: center;
   }
 
   .ContactGrid input {
