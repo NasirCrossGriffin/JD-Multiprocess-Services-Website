@@ -199,7 +199,7 @@ function App() {
       </div>
       <div className='About' ref={aboutRef}>
         <div className="AboutImage">
-          <img src="/About_Image.JPG" alt="About Image" />
+          <img src="/About_Image.png" alt="About Image" />
         </div>
         <div className='AboutContent'>
           <div className='AboutHeading'>

@@ -91,24 +91,29 @@
 
     .Logo {
         position: absolute;
-        height: 7vw;
+        height: 70%;
         width: fit-content;
-        top: 5%;
+        top: 50%;
         left: 5px;
-        transform: translateY(-5%);
+        transform: translateY(-50%);
     }
 
     .NavLinks {
         position: absolute;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
         top : 50%;
-        right : 8%;
+        right : 35%;
         height: fit-content;
         transform: translateY(-50%);
-        width: 100%;
+        width: 30%;
+        min-width: 0;
+        min-height: 90%;
+    }
+
+    .NavLinks button {
+        padding: 0 0 0 0;
     }
 
 
@@ -116,18 +121,21 @@
         color: white;
         font-family: "Montserrat", serif;
         font-weight: 500;
-        font-size: 2.2vw;
+        font-size: 3vw;
         letter-spacing: 0.04em;
         margin-left: 5px;
         margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
         text-wrap: nowrap;
+        padding: 0 0 0 0;
     }
 
     .Navbar .ContactUs {
         position: absolute;
-        width : 15%;
-        height: 6vw;
-        font-size: 2vw;
+        width : 20%;
+        height: 7vw;
+        font-size: 2.5vw;
         border-radius: 50px;
         top: 50%;
         transform: translateY(-50%);
