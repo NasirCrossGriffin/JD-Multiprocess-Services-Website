@@ -1,0 +1,147 @@
+.Navbar {
+    position: fixed;
+    background-color: rgb(35, 57, 115);
+    width: 100vw;
+    height: 88px;
+    max-height: 20%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    min-width: 600px;
+}
+
+.Logo {
+    position: absolute;
+    height: 95%;
+    width: fit-content;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+}
+
+.Logo img {
+    height: 100%;
+    width: auto;
+}
+
+.NavLinks {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top : 50%;
+    right : 12%;
+    height: fit-content;
+    transform: translateY(-50%);
+    min-width: 60%;
+}
+
+.NavLinks button {
+    padding: 0 0 0 0;
+    background-color: transparent;
+    border-color: transparent;
+    
+}
+
+
+.NavLink {
+    color: white;
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+    font-size: 1.2vw;
+    letter-spacing: 0.04em;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-wrap: nowrap;
+}
+
+.Navbar .ContactUs {
+    position: absolute;
+    width : 12%;
+    height: 60%;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5%;
+    background-color:rgb(19, 129, 204);
+    color:white;
+    text-wrap: nowrap;
+    font-size: 1.2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items : center
+}
+
+@media (max-width: 1023px) and (pointer: coarse) and (hover: none) {
+    .Navbar {
+        position: fixed;
+        background-color: rgb(35, 57, 115);
+        width: 100vw;
+        height: 88px;
+        max-height: 20%;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        min-width: 0;
+    }
+
+    .Logo {
+        position: absolute;
+        height: 7vw;
+        width: fit-content;
+        top: 5%;
+        left: 5px;
+        transform: translateY(-5%);
+    }
+
+    .NavLinks {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        top : 50%;
+        right : 8%;
+        height: fit-content;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+
+    .NavLink {
+        color: white;
+        font-family: "Montserrat", serif;
+        font-weight: 500;
+        font-size: 2.2vw;
+        letter-spacing: 0.04em;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-wrap: nowrap;
+    }
+
+    .Navbar .ContactUs {
+        position: absolute;
+        width : 15%;
+        height: 6vw;
+        font-size: 2vw;
+        border-radius: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.5%;
+        background-color:rgb(19, 129, 204);
+        padding-left: 0;
+        padding-right: 0;
+        color:white;
+        text-wrap: nowrap;
+        
+    }
+}
+
+@media (max-width: 1439px) and (min-width : 1024px) and (pointer: coarse) and (hover: none) {
+
+
+}
