@@ -1,8 +1,16 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
+import { newContact } from './middleware/contact'
 import Navbar from './components/Navbar'
 
 function App() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageSent, setMessageSent] = useState<null | string>(null);
+
   const [sectionStates, setSectionStates] = useState<Record<number, boolean>>({});
 
   const services = [
@@ -127,6 +135,23 @@ function App() {
 
   const contactRef = useRef<(HTMLDivElement | null)>(null);
 
+  const submitContact = async () => {
+    const contactObj = {
+      email: email,
+      firstname: firstName,
+      lastname: lastName,
+      phone: phone,
+      message: message
+    };
+
+    try {
+      await newContact(contactObj);
+      setMessageSent("Your contact message was sent!");
+    } catch (err) {
+      setMessageSent("Your contact message failed to send.");
+    }
+  };
+
   return (
     <>
       <div className='Home' ref={homeRef}>
@@ -142,8 +167,8 @@ function App() {
           </div>
           <div className='Details'>
             <p>
-              Ya sea que necesite asistencia fiscal, servicios de notaría general, servicios para bodas, apostilla, traducción o ayuda con documentación empresarial, JD Multiprocess and Services LLC está aquí para ayudarle.
-              Ofrecemos nuestros servicios de notaría móvil y administrativos confiables en Trenton y sus alrededores en Nueva Jersey, diseñados para que el proceso sea conveniente, preciso y sin estrés.
+              Ya sea que necesite asistencia fiscal, servicios de notary general, servicios para bodas, apostilla, traducción o ayuda con documentación empresarial, JD Multiprocess and Services LLC está aquí para ayudarle.
+              Ofrecemos nuestros servicios de notary móvil y administrativos confiables en Trenton y sus alrededores en Nueva Jersey, diseñados para que el proceso sea conveniente, preciso y sin estrés.
               Con experiencia en necesidades personales y empresariales, garantizamos que cada documento se maneje con cuidado y profesionalismo.
             </p>
           </div>
@@ -278,13 +303,13 @@ function App() {
           <div className='SubmissionAndLinks'>
             <div className='SubmissionBox'>
               <div className='ContactGrid'>
-                <input placeholder="First Name" />
-                <input placeholder="Last Name" />
-                <input placeholder="Email" />
-                <input placeholder="Phone" />
+                <input placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
+                <input placeholder="Last Name" onChange={(e) => setLastName(e.target.value)} />
+                <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                <input placeholder="Phone" onChange={(e) => setPhone(e.target.value)} />
               </div>
-              <textarea placeholder="Enter Your Message Here"/>
-              <button className='SubmitButton'>Submit</button>
+              <textarea placeholder="Enter Your Message Here" onChange={(e) => setMessage(e.target.value)}/>
+              <button className='SubmitButton' onClick={submitContact}>Submit</button>
             </div>
             <div className='Links'>
               <a  className='Link' target="_blank" href="https://www.instagram.com/jdmultiprocess/"><img src="/Instagram.png" /></a>

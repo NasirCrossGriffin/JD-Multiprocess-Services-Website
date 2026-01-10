@@ -40,6 +40,11 @@ app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
+//Routes
+const contactRouter = require('./routes/contact');
+
+app.use('/api/contact', contactRouter);
+
 //Start Server
 app.listen(port, () => {
   console.log(`Backend listening on port ${port}`)

@@ -5,6 +5,10 @@ html {
   overflow-x: scroll;
 } 
 
+body {
+  background-color: rgb(19, 129, 204);
+}
+
 
 .Home {
   position: relative;
@@ -478,6 +482,7 @@ html {
   html, body {
     width: 100%;
     max-width: 100%;
+    background-color: rgb(19, 129, 204);
     overflow-x: hidden; /* stop sideways scroll on mobile */
   }
 
@@ -492,6 +497,7 @@ html {
     min-width: 0;
     min-height: 0;
     height: auto;
+    background-color: rgb(19, 129, 204);
   }
 
   /* HOME */
@@ -558,6 +564,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
   }
 
   .ServiceIcon {
@@ -567,12 +574,13 @@ html {
 
   .ServiceName {
     font-size: 12px;
+    color: white;
   }
 
   /* ABOUT: stack image over text */
   .About {
     position: relative;
-    margin-top : 50px;
+    padding-top : 50px;
     width : 100vw;
     height : auto;
   }
