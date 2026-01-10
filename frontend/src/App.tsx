@@ -311,6 +311,7 @@ function App() {
               <textarea placeholder="Enter Your Message Here" onChange={(e) => setMessage(e.target.value)}/>
               <button className='SubmitButton' onClick={submitContact}>Submit</button>
             </div>
+            {messageSent ? <p className='ContactMessage'>{messageSent}</p> : null}
             <div className='Links'>
               <a  className='Link' target="_blank" href="https://www.instagram.com/jdmultiprocess/"><img src="/Instagram.png" /></a>
               <a  className='Link' href="tel:+16098497685"><img src="/Phone.png" /></a>
