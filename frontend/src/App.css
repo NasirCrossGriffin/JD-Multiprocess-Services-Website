@@ -182,6 +182,7 @@
     font-size: 1vw;
     height : 20px;
     text-wrap: nowrap;
+    color : white
   }
 
   .ServiceIcon img {
@@ -732,6 +733,7 @@
     font-size: 1.5vh;
     height : 20px;
     text-wrap: nowrap;
+    color : white
   }
 
   .ServiceIcon img {
