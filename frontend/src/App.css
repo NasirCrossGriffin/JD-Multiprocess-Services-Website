@@ -1,90 +1,111 @@
-html {
-  width: 100vw;
-  max-width : 1920px;
-  background-color: rgb(19, 129, 204);
-  overflow-x: scroll;
-} 
+@media (orientation: landscape) {
+  html {
+    width: 100vw;
+    max-width : 1920px;
+    background-color: rgb(19, 129, 204);
+    overflow-x: scroll;
+  } 
 
-body {
-  background-color: rgb(19, 129, 204);
-}
+  body {
+    background-color: rgb(19, 129, 204);
+  }
 
 
-.Home {
-  position: relative;
-  width: 100vw; 
-  min-width: 1200px;
-  height: 100vh;
-  min-height: 700px;
-  background-color: rgb(19, 129, 204);
-}
+  .Home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw; 
 
-.HomeCopy {
-  position: absolute;
-  top : 88px;
-  height: fit-content;
-  width: 100vw; 
-  min-width: 1200px;
-  height: 82vh;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: rgb(19, 129, 204);
-}
-
-.CopyContent {
-  display: flex;
-  top : 20px;
-  left : 150px;
-  width: fit-content;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: absolute;
-}
-
-.Tagline {
-    color: white;
-    background-image: none;
-    padding-left: 0;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    text-transform: capitalize;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: Lato, sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.Tagline p {
-  margin: 0 0 0 0;
-}
-
-.Heading {
-    color: white;
-    width: 900px;
-    background-image: none;
-    padding-left: 0;
-    font-size: 1.2rem;
-    font-family: Lato, sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.2;
     height: fit-content;
-}
+    min-height: 700px;
+    scroll-margin-top: 88px;
+    background-color: rgb(19, 129, 204);
+  }
+  
+  @media (pointer: fine) {
+      .Home {
+        min-width: 1200px;
+        min-height: 100vh;
+      }
+  }
 
-.Heading p {
-  margin: 0 0 0 0;
-}
+  .HomeCopy {
+    position: relative;
+    top : 88px;
+    height: fit-content;
+    width: 100vw; 
+    min-width: 1200px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: rgb(19, 129, 204);
+  }
 
-.Details {
-  width: 900px;
-  height: fit-content;
-  margin-bottom: 50px;
-  color: white;
-}
+    @media (pointer: fine) {
+      .HomeCopy {
+        min-width: 1200px;
+      }
+  }
 
-.CopyContent .ContactUs {
+  .CopyContent {
+    position: relative;
+    display: flex;
+    top : 20px;
+    left : 10vw;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .Tagline {
+      position: relative;
+      color: white;
+      background-image: none;
+      padding-left: 0;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      text-transform: capitalize;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-family: Lato, sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+  }
+
+  .Tagline p {
+    margin: 0 0 0 0;
+  }
+
+  .Heading {
+      color: white;
+      position: relative;
+      width: 50vw;
+      background-image: none;
+      padding-left: 0;
+      font-family: Lato, sans-serif;
+      font-size: 4vw;
+      font-weight: 700;
+      line-height: 1.2;
+      height: fit-content;
+  }
+
+  .Heading p {
+    margin: 0 0 0 0;
+  }
+
+  .Details {
+    position: relative;
+    width: 70vw;
+    height: fit-content;
+    margin-bottom: 50px;
+    color: white;
+  }
+
+  .CopyContent .ContactUs {
+    position: relative;
     height: 52px;
     padding-left: 40px;
     padding-right: 40px;
@@ -93,1009 +114,988 @@ body {
     transform: translateY(-50%);
     color: white;
     background-color:rgb(35, 57, 115);
-}
-
-.Services {
-  position: absolute;
-  bottom : -40px;
-  height: 100px;
-  width: 85%;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  border-radius: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgb(35, 57, 115);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-}
-
-.Service {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
-  width: 300px;
-  text-align: center;
-  font-size: 15px;
-}
-
-.ServiceSection {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 600ms ease, transform 600ms ease;
-  will-change: opacity, transform;
-}
-
-.ServiceSection.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.ServiceSection.fade-out {
-  opacity: 0;
-  transform: translateY(18px);
-}
-
-/* Optional: respect reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  .ServiceSection {
-    transition: none;
-    transform: none;
-  }
-}
-
-
-.ServiceIcon{
-  height: 40%;
-}
-
-.ServiceName {
-  margin: 0 0 0 0;
-  font-weight: bold;
-  font-family: "Montserrat", serif;
-  height : 20px;
-  text-wrap: nowrap;
-}
-
-.ServiceIcon img {
-   object-fit: contain;
-   height: 100%;
-}
-
-.About {
-  position: relative;
-  width: 100vw; 
-  min-width: 1200px;
-  height: 100vh;
-  min-height: 700px;
-  background-color: rgb(19, 129, 204);
-}
-
-@media (max-width : 1300px) and (pointer : fine) {
-  .About {
-    margin-top: 100px;
-  }
-}
-
-.AboutContent {
-  position: absolute;
-  right: 10%;
-  top: 70%;
-  transform: translateY(-70%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  width : 40%
-}
-
-.AboutHeading {
-    text-transform: uppercase;
-    text-transform: capitalize;
-    font-family: Lato, sans-serif;
-    font-size: 45px;
-    font-weight: bold;
-    color: rgb(126, 217, 86);
-    margin-bottom: 35px;
-}
-
-.AboutCopy {
-    font-family: "Montserrat", serif;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.AboutImage {
-  position: absolute;
-  border-radius: 25px;
-  height: 80%;
-  left : 5%;
-  top : 72%;
-  transform: translateY(-70%);
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
-.AboutImage img {
-  object-fit: contain;
-  height: 100%;
-}
-
-.ServiceVideo {
-  position: absolute;
-  height: 70%;
-  right : 10%;
-  top : 50%;
-  transform: translateY(-50%);
-}
-
-.ServiceVideo video {
-  object-fit: contain;
-  height: 100%;
-}
-
-
-.Mission {
-  position: relative;
-  width: 100vw; 
-  min-width: 1200px;
-  height: 100vh;
-  min-height: 700px;
-  background-color: rgb(19, 129, 204);;
-}
-
-.MissionContent {
-  position: absolute;
-  left: 20%;
-  top: 70%;
-  height: 70%;
-  transform: translateY(-70%) translateX(-20%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  color: white;
-  width : 70%;
-  background-color: rgb(35, 57, 115);
-  padding: 50px 50px 50px 50px;
-  border-radius: 20px;
-}
-
-.MissionImage {
-  position: absolute;
-  height: 80%;
-  right : 5%;
-  top : 50%;
-  transform: translateY(-50%);
-}
-
-.MissionImage img {
-  object-fit: contain;
-  height: 100%;
-}
-
-.MissionHeading {
-    text-transform: uppercase;
-    text-transform: capitalize;
-    font-family: Lato, sans-serif;
-    font-size: 45px;
-    font-weight: bold;
-    color: rgb(126, 217, 86);
-    margin-bottom: 35px;
-}
-
-.MissionCopy {
-    font-family: "Montserrat", serif;
-    font-size: 20px;
-    font-weight: 700;
-    width: 50%;
-}
-
-.ServiceSection {
-  position: relative;
-  width: 100vw; 
-  min-width: 1200px;
-  height: 100vh;
-  min-height: 700px;
-  background-color: rgb(19, 129, 204);;
-}
-
-.ServiceContent {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateX(-5%) translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 500px;
-  height: 90%;
-}
-
-.ServiceCopy {
-  font-family: "Montserrat", serif;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.ServiceHeading {
-  color: rgb(126, 217, 86);
-}
-
-.ServiceImage {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateX(5%) translateY(-50%);
-  width: 500px;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.ServiceImage img {
-  object-fit: contain;
-  width: 100%;
-  height: auto;
-}
-
-.Contact {
-    position: relative;
-    z-index: 5;
-    width: 100vw; 
-    min-width: 1200px;
-    height: 160vh;
-    background-color: rgb(19, 129, 204);;
-    overflow-y: hidden;
-}
-
-.ContactContainer {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    left: 40px;
-    top : 100px;
-    z-index: 4;
-}
-
-.SubmitButton {
-    margin-top: 30px;
-    width: 200px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.WhiteRectangle {
-    width: 249px;
-    height: 100px;
-    border-width: 5px;
-    border-color: white;
-    border-style: solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.WhiteRectangle p {
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.SubmissionAndLinks {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.SubmissionBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 70px 70px 30px 70px;
-}
-
-.Links {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  width: 100%;
-  height : 8vh;
-}
-
-.Link {
-  height: 100%;
-  width: auto;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.Link img {
-  object-fit: contain;
-  height: 100%;
-  width: auto;
-}
-
-.ContactGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.ContactGrid input {
-    width: 280px;
-    height: 66px;
-    font-size: 20px;
-    font-family:  'Montserrat', sans-serif;
-}
-
-
-.ContactTag {
-    font-size: 35px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-weight: bolder;
-}
-
-.ContactDescription {
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    width: 400px;
-}
-
-.SubmissionBox textarea {
-    width: 569px;
-    height: 132px;
-    font-family:  'Montserrat', sans-serif;
-    font-size: 15px;
-}
-
-.Snapshot {
-    position: absolute;
-    right: 50px;
-    bottom: 200px;
-    width: 700px;
-    height: auto;
-    z-index: 3;
-}
-
-@media (max-width: 1023px) and (pointer: coarse) and (hover: none) {
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    background-color: rgb(19, 129, 204);
-    overflow-x: hidden; /* stop sideways scroll on mobile */
   }
 
-  /* Remove desktop width locks */
-  .Home,
-  .HomeCopy,
-  .About,
-  .Mission,
-  .ServiceSection,
-  .Contact {
-    width: 100%;
-    min-width: 0;
-    min-height: 0;
-    height: auto;
-    background-color: rgb(19, 129, 204);
-  }
-
-  /* HOME */
-  .Home {
-    position: relative;
-    height: auto;
-    width: 100vw;
-  }
-
-  .HomeCopy {
-    position: relative;
-    top: 15px;
-    width: 100%;
-    height: auto;
-    padding: 90px 16px 0 16px; /* mobile padding */
-  }
-
-  .CopyContent {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 90%;
-  }
-
-  .Heading {
-    width: 100%;
-    font-size: 2.2rem;
-    line-height: 1.15;
-  }
-
-  .Details {
-    width: 100%;
-    margin-bottom: 24px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .CopyContent .ContactUs {
-    position: relative;
-    transform: none;
-    margin-top: 12px;
-    color : white
-  }
-
-  /* SERVICES pill: turn into horizontal scroll row */
   .Services {
     position: relative;
-    width: 100vw;
-    height : fit-content;
+    height: 100px;
+    width: 85%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    border-radius: 50px;
     left: 50%;
     transform: translateX(-50%);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 0;
-    justify-items: center;
+    background-color: rgb(35, 57, 115);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    z-index: 5;
+    margin-top: 20vh;
   }
 
   .Service {
-    width: 50px;
-    height: 80px;
-    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: fit-content;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .ServiceSection {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms ease;
+    will-change: opacity, transform;
+  }
+
+  .ServiceSection.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ServiceSection.fade-out {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  /* Optional: respect reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ServiceSection {
+      transition: none;
+      transform: none;
+    }
+  }
+
+
+  .ServiceIcon{
+    height: 2vw;
+  }
+
+  .ServiceName {
+    margin: 0 0 0 0;
+    font-weight: bold;
+    font-family: "Montserrat", serif;
+    font-size: 1vw;
+    height : 20px;
+    text-wrap: nowrap;
+  }
+
+  .ServiceIcon img {
+    object-fit: contain;
+    height: 100%;
+  }
+
+  .About {
+    position: relative;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgb(19, 129, 204);
+    scroll-margin-top: 88px;
+  }
+
+  @media (pointer : fine) {
+    .About {
+      min-width: 1200px;
+      min-height: 700px;
+    }
+  }
+
+  .AboutContent {
+    position: relative;
+    left: 90%;
+    top: 70%;
+    transform: translateY(-70%) translateX(-90%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
+    width : 40vw
   }
 
-  .ServiceIcon {
+  .AboutHeading {
+      text-transform: uppercase;
+      text-transform: capitalize;
+      font-family: Lato, sans-serif;
+      font-size: 3vw;
+      font-weight: bold;
+      color: rgb(126, 217, 86);
+      margin-bottom: 35px;
+      text-align: start;
+      margin: 0 0 0 0;
+  }
+
+  .AboutCopy {
+      font-family: "Montserrat", serif;
+      font-size: 1.3vw;
+      font-weight: 700;
+  }
+
+  .AboutImage {
+    position: absolute;
+    border-radius: 25px;
+    height: 80%;
+    width: 40vw;
+    left : 5%;
+    top : 72%;
+    transform: translateY(-70%);
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .AboutImage img {
+    object-fit: contain;
+    height: 100%;
+  }
+
+  .ServiceVideo {
+    position: absolute;
+    height: 70%;
+    right : 10%;
+    top : 50%;
+    transform: translateY(-50%);
+  }
+
+  .ServiceVideo video {
+    object-fit: contain;
+    height: 100%;
+  }
+
+
+  .Mission {
+    position: relative;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgb(19, 129, 204);
+    scroll-margin-top: 88px;
+  }
+
+    @media (pointer : fine) {
+      .Mission {
+        min-width: 1200px;
+        min-height: 700px;
+      }
+    }
+
+  .MissionContent {
+    position: absolute;
+    left: 20%;
+    top: 70%;
+    height: 70%;
+    transform: translateY(-70%) translateX(-20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    width : 70%;
+    background-color: rgb(35, 57, 115);
+    padding: 50px 50px 50px 50px;
+    border-radius: 20px;
+  }
+
+  .MissionImage {
+    position: absolute;
+    height: 80%;
+    right : 5%;
+    top : 50%;
+    transform: translateY(-50%);
+  }
+
+  .MissionImage img {
+    object-fit: contain;
+    height: 100%;
+  }
+
+  .MissionHeading {
+      text-transform: uppercase;
+      text-transform: capitalize;
+      font-family: Lato, sans-serif;
+      font-size: 3vw;
+      font-weight: bold;
+      color: rgb(126, 217, 86);
+      margin-bottom: 35px;
+  }
+
+  .MissionCopy {
+      font-family: "Montserrat", serif;
+      font-size: 1.3vw;
+      font-weight: 700;
+      width: 50%;
+  }
+
+  .ServiceSection {
+    position: relative;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgb(19, 129, 204);
+    scroll-margin-top: 88px;
+  }
+
+  @media (pointer : fine) {
+    .ServiceSection {
+      min-width: 1200px;
+      min-height: 700px;
+    }
+  }
+
+  .ServiceContent {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateX(-5%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50vw;
+    height: 90%;
+  }
+
+  .ServiceCopy {
+    font-family: "Montserrat", serif;
+    font-size: 1.3vw;
+    font-weight: 600;
+  }
+
+  .ServiceHeading {
+    color: rgb(126, 217, 86);
+    font-size: 3vw;
+  }
+
+  .ServiceImage {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateX(5%) translateY(-50%);
+    width: 40vw;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ServiceImage img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+
+  
+  .Contact {
+      position: relative;
+      z-index: 5;
+      width: 100vw;
+      height: 160vh;
+      min-height: 800px;
+      background-color: rgb(19, 129, 204);
+      scroll-margin-top: 26vh;
+      overflow-y: hidden;
+  }
+
+  .ContactContainer {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      left: 5vw;
+      top : 10%;
+      z-index: 4;
+  }
+
+  .ContactContainer button{
+      margin-top: 30px;
+      width: 200px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+
+  .WhiteRectangle {
+      width: 20vw;
+      height: 6.4vw;
+      border-width: 5px;
+      border-color: white;
+      border-style: solid;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .WhiteRectangle p {
+      font-size: 2vw;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+  .SubmissionBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      padding: 6vw 6vw 3vw 6vw;
+  }
+
+  .ContactGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .ContactGrid input {
+      width: 18vw;
+      height: 4vw;
+      font-size: 20px;
+      font-family:  'Montserrat', sans-serif;
+  }
+
+
+  .ContactTag {
+      font-size: 35px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-weight: bolder;
+  }
+
+  .ContactDescription {
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      width: 400px;
+  }
+
+  .SubmissionBox textarea {
+      width: 36.55vw;
+      height: 8vw;
+      font-family:  'Montserrat', sans-serif;
+      font-size: 15px;
+  }
+
+  .Snapshot {
+      position: absolute;
+      right: 2vw;
+      top : 100px;
+      width: 40vw;
+      height: auto;
+      z-index: 3;
+  }
+
+  .ContactMessage {
+      font-size: 25px;
+      color: white;
+      font-family: "Montserrat";
+  }
+
+  .SubmitButton {
+      margin-top: 30px;
+      width: 200px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+
+  .SubmissionAndLinks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    height : 8vh;
+  }
+
+  .Link {
+    height: 100%;
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .Link img {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+  }
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (orientation: portrait) {
+  html {
+    width: 100vw;
+    max-width : 1920px;
+    background-color: rgb(19, 129, 204);
+    overflow-x: scroll;
+  } 
+
+  body {
+    background-color: rgb(19, 129, 204);
+  }
+
+
+  .Home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw; 
+
+    height: fit-content;
+    min-height: 700px;
+    scroll-margin-top: 88px;
+    background-color: rgb(19, 129, 204);
+  }
+  
+  @media (pointer: fine) {
+      .Home {
+        min-width: 1200px;
+        min-height: 100vh;
+      }
+  }
+
+  .HomeCopy {
+    position: relative;
+    top : 88px;
+    height: fit-content;
+    width: 100vw; 
+    font-weight: 600;
+    background-color: rgb(19, 129, 204);
+  }
+
+    @media (pointer: fine) {
+      .HomeCopy {
+        min-width: 1200px;
+      }
+  }
+
+  .CopyContent {
+    position: relative;
+    display: flex;
+    top : 20px;
+    left : 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 2vh;
+  }
+
+  .Tagline {
+      position: relative;
+      color: white;
+      background-image: none;
+      padding-left: 0;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      text-transform: capitalize;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-family: Lato, sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+  }
+
+  .Tagline p {
+    margin: 0 0 0 0;
+  }
+
+  .Heading {
+      color: white;
+      position: relative;
+      width: 90vw;
+      background-image: none;
+      padding-left: 0;
+      font-family: Lato, sans-serif;
+      font-size: 4vh;
+      font-weight: 700;
+      line-height: 1.2;
+      height: fit-content;
+  }
+
+  .Heading p {
+    margin: 0 0 0 0;
+  }
+
+  .Details {
+    position: relative;
+    width: 70vw;
+    height: fit-content;
+    margin-bottom: 50px;
+    color: white;
+  }
+
+  .CopyContent .ContactUs {
+    position: relative;
+    height: 52px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color : white;
+    border-radius: 50px;
+    transform: translateY(-50%);
+    color: white;
+    background-color:rgb(35, 57, 115);
+    font-size: 18px;
+  }
+
+  .Services {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(35, 57, 115);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 15px;
+    place-items: center;
+    z-index: 5;
+    margin-top: 20vh;
+  }
+
+  .Service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: fit-content;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .ServiceSection {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms ease;
+    will-change: opacity, transform;
+  }
+
+  .ServiceSection.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ServiceSection.fade-out {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  /* Optional: respect reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ServiceSection {
+      transition: none;
+      transform: none;
+    }
+  }
+
+
+  .ServiceIcon{
+    height: 5vh;
+  }
+
+  .ServiceName {
+    margin: 0 0 0 0;
+    font-weight: bold;
+    font-family: "Montserrat", serif;
+    font-size: 1.5vh;
+    height : 20px;
+    text-wrap: nowrap;
+  }
+
+  .ServiceIcon img {
+    object-fit: contain;
+    height: 100%;
+  }
+
+  .About {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; 
+    min-height: 100vh;
+    height: fit-content;
+    background-color: rgb(19, 129, 204);
+    margin-top: 50px;
+    scroll-margin-top: 88px;
+  }
+
+  @media (pointer : fine) {
+    .About {
+      min-width: 1200px;
+      min-height: 700px;
+    }
+  }
+
+  .AboutContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width : 90vw
+  }
+
+  .AboutHeading {
+      text-transform: uppercase;
+      text-transform: capitalize;
+      font-family: Lato, sans-serif;
+      font-size: 5vh;
+      font-weight: bold;
+      color: rgb(126, 217, 86);
+      margin-bottom: 35px;
+      text-align: center;
+      margin: 0 0 0 0;
+  }
+
+  .AboutCopy {
+      font-family: "Montserrat", serif;
+      font-size: 2vh;
+      font-weight: 700;
+  }
+
+  .AboutImage {
+    position: relative;
+    border-radius: 25px;
+    width: 70vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .AboutImage img {
+    object-fit: contain;
+    width: 100%;;
+  }
+
+  .ServiceVideo {
+    position: relative;
+    width: 40%;
+  }
+
+  .ServiceVideo video {
     object-fit: contain;
     width: 100%;
   }
 
-  .ServiceName {
-    font-size: 12px;
-    color: white;
-  }
 
-  /* ABOUT: stack image over text */
-  .About {
-    position: relative;
-    padding-top : 50px;
-    width : 100vw;
-    height : auto;
-  }
-
-  .AboutImage {
-    position: relative;
-    top : 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-  }
-
-  .AboutImage img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 16px;
-  }
-
-  .AboutContent {
-    position: relative;
-    left : 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    padding: 24px 16px 0 16px;
-    align-items: flex-start;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .AboutHeading {
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-
-  .AboutCopy {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  /* MISSION: stack, make card full width */
   .Mission {
     position: relative;
-    width : 100vw;
+    width: 100vw; 
+    height: fit-content;
+    min-height: 100vh;
+    background-color: rgb(19, 129, 204);
+    scroll-margin-top: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
+    @media (pointer : fine) {
+      .Mission {
+        min-width: 1200px;
+        min-height: 700px;
+      }
+    }
 
   .MissionContent {
     position: relative;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 0;
-    width: 72%;
-    height: auto;
-
-  }
-
-  .MissionHeading {
-    font-size: 28px;
-    margin-bottom: 14px;
-  }
-
-  .MissionCopy {
-    width: 100%;
-    font-size: 16px;
-    line-height: 1.6;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width : 60%;
+    background-color: rgb(35, 57, 115);
+    padding: 50px 50px 50px 50px;
+    border-radius: 20px;
   }
 
   .MissionImage {
     position: relative;
-    right: 0;
-    top: 0;
-    transform: none;
-    height: auto;
-    width: 100%;
-    margin-top: 18px;
+    width : 70%;
+    height: fit-content;
+    margin-top : 5vh;
+    border-radius: 25px;
+
   }
 
   .MissionImage img {
+    position: relative;
+    object-fit: contain;
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    object-fit: cover;
   }
 
-  /* SERVICE SECTIONS: stack text then image/video */
+  .MissionHeading {
+      text-transform: uppercase;
+      text-transform: capitalize;
+      font-family: Lato, sans-serif;
+      text-wrap: nowrap;
+      font-size: 5vh;
+      font-weight: bold;
+      color: rgb(126, 217, 86);
+      margin-bottom: 35px;
+  }
+
+  .MissionCopy {
+      font-family: "Montserrat", serif;
+      font-size: 1.5vh;
+      font-weight: 700;
+      width: 100%;
+  }
+
   .ServiceSection {
-    padding: 50px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgb(19, 129, 204);
+    scroll-margin-top: 88px;
+  }
+
+  @media (pointer : fine) {
+    .ServiceSection {
+      min-width: 1200px;
+      min-height: 700px;
+    }
   }
 
   .ServiceContent {
     position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    width: calc(100% - 32px);
-    margin: 0 auto;
-    height: auto;
-    align-items: flex-start;
-  }
-
-  .ServiceHeading {
-    font-size: 28px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 90%;
   }
 
   .ServiceCopy {
-    font-size: 16px;
-    line-height: 1.6;
+    font-family: "Montserrat", serif;
+    font-size: 2vh;
+    font-weight: 600;
+  }
+
+  .ServiceHeading {
+    color: rgb(126, 217, 86);
+    font-size: 9vw;
+    text-align: center;
   }
 
   .ServiceImage {
     position: relative;
-    right: 0;
-    top: 0;
-    transform: none;
-    width: calc(100% - 32px);
-    height: auto;
-    margin: 18px auto 0 auto;
+    width: 40vw;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .ServiceImage img {
+    object-fit: contain;
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    object-fit: cover;
   }
 
-  /* Your video currently uses className='ServiceVideo' on the <video> element.
-     Convert it into an in-flow block and size it like an image. */
-  .ServiceVideo {
-    position: relative !important;
-    right: 0 !important;
-    top: 0 !important;
-    transform: none !important;
-    width: calc(100% - 32px) !important;
-    height: auto !important;
-    display: block;
-    margin: 18px auto 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .ServiceVideo video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* CONTACT: stack + single column form */
+  
   .Contact {
-    height: auto;
-    width: 100vw;
-    padding: 60px 0 80px 0;
-    overflow-y: visible;
-  }
-
-  .Snapshot {
-    position: relative;
-    right: 0;
-    bottom: 0;
-    width: calc(100% - 32px);
-    margin: 0 auto 24px auto;
-    display: block;
+      position: relative;
+      z-index: 5;
+      width: 100vw;
+      height: fit-content;
+      background-color: rgb(19, 129, 204);
+      scroll-margin-top: 176px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-y: hidden;
   }
 
   .ContactContainer {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 30vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 4;
   }
 
+  .ContactContainer button{
+      margin-top: 30px;
+      width: 200px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      color: white;
+  }
+
+  .WhiteRectangle {
+      width: 90vw;
+      height: fit-content;
+      border-width: 5px;
+      border-color: white;
+      border-style: solid;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .WhiteRectangle p {
+      font-size: 6vw;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+  .SubmissionBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      padding: 5vw 5vw 5vw 5vw;
+      width: 80vw;
+      height: fit-content;
+  }
+
+  .ContactGrid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: fit-content;
+  }
+
+  .ContactGrid input {
+      width: 90%;
+      margin-bottom: 2vh;
+      height: 10vw;
+      font-size: 20px;
+      font-family:  'Montserrat', sans-serif;
+  }
+
+
   .ContactTag {
-    font-size: 22px;
-    text-align: center;
+      font-size: 7vw;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-weight: bolder;
   }
 
   .ContactDescription {
-    width: 100%;
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .SubmissionBox {
-    width: 100%;
-    padding: 20px 20px 20px 20px;
-  }
-
-  .ContactGrid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    width: 100%;
-    justify-items: center;
-    align-items: center;
-  }
-
-  .ContactGrid input {
-    width: 100%;
-    height: 54px;
-    font-size: 16px;
+      font-size: 2.5vh;
+      font-family: 'Montserrat', sans-serif;
+      width: 90vw;
   }
 
   .SubmissionBox textarea {
-    width: 100%;
-    height: 140px;
-    margin-top: 12px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 1439px) and (min-width : 1024px) and (pointer: coarse) and (hover: none) {
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Remove desktop width locks */
-  .Home,
-  .HomeCopy,
-  .About,
-  .Mission,
-  .ServiceSection,
-  .Contact {
-    width: 100%;
-    min-width: 0;
-    height: auto;
-    min-height: 0;
-  }
-
-  /* HOME */
-  .Home {
-    height: 100vh;
-  }
-
-  .HomeCopy {
-    position: absolute;
-    top: 70px;
-    width: 100%;
-    height: auto;
-    padding: 50px 48px 0 48px;
-  }
-
-  .CopyContent {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 1000px;
-  }
-
-  .Heading {
-    width: 90%;
-    font-size: 5.5vw;
-    line-height: 1.15;
-  }
-
-  .Details {
-    width: 95%;
-    font-size: 2vw;
-    line-height: 1.6;
-    margin-bottom: 28px;
-  }
-
-  .CopyContent .ContactUs {
-    width : 15vw;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    color : white;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Services: still a pill, but allow horizontal scroll if needed */
-  .Services {
-    width: 98%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 16px;
-    gap : 30px;
-    overflow-x: auto;
-    justify-content: center;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .Service {
-    flex: 0 0 auto;
-    width: 10vw;
-    max-width: fit-content;
-    min-width: fit-content;
-    height: 90%;
-  }
-
-  .ServiceIcon {
-    width: 100%;
-  }
-
-  .ServiceName {
-    text-wrap: nowrap;
-    min-width: fit-content;
-    height: fit-content;
-    font-size: 1.3vw;
-  }
-
-  /* ABOUT: image then text (stack) */
-  .About {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .AboutImage {
-    position: absolute;
-    left: 2%;
-    top: 50%;
-    width : 45%;
-    height: 80%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .AboutImage img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 18px;
-  }
-
-  .AboutContent {
-    position: absolute;
-    right: 2%;
-    top: 50%;
-    width : 45%;
-    height: 80%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .AboutHeading {
-    font-size: 36px;
-    margin-bottom: 18px;
-  }
-
-  .AboutCopy {
-    font-size: 18px;
-    line-height: 1.65;
-  }
-
-  /* MISSION: card with image below */
-  .Mission {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .MissionContent {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    width: calc(100% - 96px);
-    margin: 0 auto;
-    height: 70%;
-  }
-
-  .MissionHeading {
-    font-size: 36px;
-  }
-
-  .MissionCopy {
-    height: 100%;
-    font-size: 18px;
-    line-height: 1.65;
-  }
-
-  .MissionImage {
-    position: absolute;
-    right: 2%;
-    top: 0;
-    transform: none;
-    width: 45%;
-    height: 90%;
-    margin-top: 22px;
-  }
-
-  .MissionImage img {
-    width: 100%;
-    height: 100%;
-    border-radius: 18px;
-    object-fit: cover;
-  }
-
-  /* SERVICE SECTIONS: two-row layout (text, then media) */
-  .ServiceSection {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .ServiceContent {
-    position: absolute;
-    top: 50%;
-    left: 2%;
-    transform: translateY(-50%);
-    width: 45%;
-    margin: 0 auto;
-    height: 90%;
-  }
-
-  .ServiceHeading {
-    font-size: 5vw;
-  }
-
-  .ServiceCopy {
-    font-size: 2vw;
-    line-height: 1.65;
-  }
-
-  .ServiceImage {
-    position: absolute;
-    top: 50%;
-    right: 2%;
-    transform: translateY(-50%);
-    width: 45%;
-    margin: 0 auto;
-    height: 90%;
-  }
-
-  .ServiceImage img {
-    width: 100%;
-    height: auto;
-    border-radius: 18px;
-    object-fit: cover;
-  }
-
-  /* Video block same sizing as image */
-  .ServiceVideo {
-    position: absolute;
-    top: 50%;
-    right: 2%;
-    transform: translateY(-50%);
-    width : 45%;
-    margin: 0 auto;
-  }
-
-  .ServiceVideo video {
-    width: 100%;
-    height: (auto + 500px);
-    object-fit: cover;
-    display: block;
-  }
-
-  /* CONTACT */
-  .Contact {
-    position: relative;
-    height: fit-content;
-    padding: 70px 0 90px 0;
-    padding-bottom: 700px;
-    max-height: 150vh;
+      width: 90%;
+      height: 60vw;
+      font-family:  'Montserrat', sans-serif;
+      font-size: 15px;
   }
 
   .Snapshot {
+      position: relative;
+      right: 0px;
+      bottom: 0px;
+      width: 100vw;
+      height: auto;
+      z-index: 3;
+  }
+
+  .ContactMessage {
+      font-size: 25px;
+      color: white;
+      font-family: "Montserrat";
+  }
+
+  .SubmitButton {
+      margin-top: 30px;
+      width: 200px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+
+  .SubmissionAndLinks {
     position: relative;
-    right: 0;
-    bottom: 0;
-    width: min(720px, calc(100% - 96px));
-    margin: 0 auto 28px auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .ContactContainer {
-    position: relative;
-    left: 0;
-    top: 0;
+  .Links {
+    position : relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
-    height: fit-content;
-    margin: 0 auto;
+    height : 8vh;
   }
 
-  .SubmissionBox {
-    width: 100%;
-    padding: 36px;
+  .Link {
+    height: 100%;
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+    border-color: transparent;
   }
 
-  .ContactGrid {
-    gap: 14px;
-    width: 100%;
+  .Link img {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
   }
 
-  .ContactGrid input {
-    width: 100%;
-    height: 60px;
-    font-size: 18px;
-  }
-
-  .SubmissionBox textarea {
-    width: 100%;
-    height: 160px;
-    margin-top: 14px;
-    font-size: 16px;
-  }
-
-  .Links{ 
-    padding-bottom: 150px;
-  }
+  
 }

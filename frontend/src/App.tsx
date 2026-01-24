@@ -224,11 +224,17 @@ function App() {
       </div>
       <div className='About' ref={aboutRef}>
         <div className="AboutImage">
-          <img src="/About_Image.png" alt="About Image" />
+          <img src="/About_Image.JPG" alt="About Image" />
         </div>
         <div className='AboutContent'>
           <div className='AboutHeading'>
-             JD Multiprocess & Services, Juliana De La Rosa<br></br> CEO
+             JD Multiprocess & Services
+          </div>
+          <div className='AboutHeading'>
+             Juliana De La Rosa
+          </div>
+          <div className='AboutHeading'>
+             CEO
           </div>
           <div className='AboutCopy'>
             Juliana De La Rosa es una notary con sede en Nueva Jersey que ofrece servicios de notarización confiables y profesionales, junto con una variedad de servicios administrativos y de apoyo generales para particulares y empresas.<br></br> 
@@ -299,7 +305,7 @@ function App() {
             <p>Contacto!</p>
           </div>
           <p className='ContactTag'>contact / inquiries</p>
-          <p className='ContactDescription'>Got questions, inquiries, or want information about services? Send me a message below!</p>
+          <p className='ContactDescription'>¿Tienes preguntas, consultas o deseas obtener información sobre nuestros servicios? ¡Envíame un mensaje a continuación!</p>
           <div className='SubmissionAndLinks'>
             <div className='SubmissionBox'>
               <div className='ContactGrid'>
