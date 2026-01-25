@@ -334,7 +334,7 @@ function App() {
           {index === 2 ? (
             <video
 	      ref={videoRef}	 
-              src="/Wedding_Video.mp4"
+              src="/Wedding_Video_Silent.mp4"
               className='ServiceVideo'
               autoPlay={false}
               loop
