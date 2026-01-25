@@ -13,6 +13,8 @@ function App() {
 
   const [sectionStates, setSectionStates] = useState<Record<number, boolean>>({});
 
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
   const services = [
     {
       Service: "Impuestos",
@@ -68,36 +70,84 @@ function App() {
   ];
 
   useEffect(() => {
-    const els = serviceRefs.current.filter(Boolean) as HTMLDivElement[];
-    if (els.length === 0) return;
+    const v = videoRef.current;
+    if (!v) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        setSectionStates((prev) => {
-          const next = { ...prev };
+    // Force mute both ways (attribute + property behavior)
+    v.muted = true;
+    v.defaultMuted = true;
+    v.playsInline = true;
 
-          for (const entry of entries) {
-            const indexAttr = (entry.target as HTMLElement).dataset.index;
-            if (!indexAttr) continue;
+    // Attempt play; if blocked, it will reject (normal on mobile)
+    const tryPlay = async () => {
+      try {
+        await v.play();
+      } catch {
+        // Autoplay blocked; you can optionally show a custom play overlay here
+      }
+    };
 
+    // Try immediately and again when enough data is ready
+    tryPlay();
+    v.addEventListener("canplay", tryPlay);
+
+    return () => v.removeEventListener("canplay", tryPlay);
+  }, []);
+
+  useEffect(() => {
+  const els = serviceRefs.current.filter(Boolean) as HTMLDivElement[];
+  const videoEl = videoRef.current;
+
+  if (els.length === 0 && !videoEl) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      setSectionStates((prev) => {
+        const next = { ...prev };
+
+        for (const entry of entries) {
+          const target = entry.target as HTMLElement;
+
+          // Handle service sections
+          const indexAttr = target.dataset.index;
+          if (indexAttr) {
             const idx = Number(indexAttr);
             next[idx] = entry.isIntersecting;
           }
 
-          return next;
-        });
-      },
-      {
-        threshold: 0.25, // 25% visible triggers fade-in
-        root: null,
-        rootMargin: "0px 0px -10% 0px", // fade slightly before fully centered
-      }
-    );
+          // Handle video specifically
+          if (videoEl && target === videoEl) {
+            if (entry.isIntersecting) {
+              videoEl.play().catch(() => {});
+            } else {
+              videoEl.pause();
+            }
+          }
+        }
 
-    els.forEach((el) => observer.observe(el));
+        return next;
+      });
+    },
+    {
+      threshold: 0.4,
+      root: null,
+      rootMargin: "0px 0px -15% 0px",
+    }
+  );
 
-    return () => observer.disconnect();
-  }, []);
+  // Observe service sections
+  els.forEach((el) => observer.observe(el));
+
+  // Observe the video element
+  if (videoEl) {
+    observer.observe(videoEl);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
+
+ 
 
   const scrollToService = (index: number) => {
   serviceRefs.current[index]?.scrollIntoView({
@@ -282,10 +332,11 @@ function App() {
           ) : null}
 
           {index === 2 ? (
-            <video 
+            <video
+	      ref={videoRef}	 
               src="/Wedding_Video.mp4"
               className='ServiceVideo'
-              autoPlay
+              autoPlay={false}
               loop
               muted
               playsInline
