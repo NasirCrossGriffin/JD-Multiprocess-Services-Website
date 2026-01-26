@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
                     <tr>
                       <td style="padding:24px 28px;background:#0b0b0d;">
                         <img
-                          src="/Multiprocess_And_Services_Alt.png"
+                          src="https://jdmultiprocessandservices.com/Icon.png"
                           alt="JD Multiprocess & Services"
                           style="display:block;width:120px;max-width:120px;height:auto;"
                         />
@@ -119,7 +119,7 @@ router.post("/", async (req, res) => {
                     <tr>
                       <td style="padding:24px 28px;background:#0b0b0d;">
                         <img
-                          src="/Multiprocess_And_Services_Alt.png"
+                          src="https://jdmultiprocessandservices.com/Icon.png"
                           alt="JD Multiprocess & Services"
                           style="display:block;width:120px;max-width:120px;height:auto;"
                         />
