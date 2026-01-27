@@ -1,0 +1,71 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "taxes": "Taxes",
+    "notary": "Notary",
+    "weddings": "Weddings",
+    "bookkeeping": "Bookkeeping",
+    "contact": "Contact"
+  },
+  "home": {
+    "heading": "General services for your personal and business needs.",
+    "details": "Whether you need tax assistance, general notary services, wedding services, apostille support, translation, or help with business documentation, JD Multiprocess and Services LLC is here to help. We offer reliable mobile notary and administrative services in Trenton and surrounding areas in New Jersey, designed to make the process convenient, accurate, and stress-free. With experience supporting both personal and business needs, we ensure every document is handled with care and professionalism.",
+    "cta": "Contact"
+  },
+  "about": {
+    "company": "JD Multiprocess & Services",
+    "name": "Juliana De La Rosa",
+    "title": "CEO",
+    "copy": "Juliana De La Rosa is a New Jersey–based notary who provides reliable, professional notarization services, along with a variety of general administrative and support services for individuals and businesses.<br></br>As a commissioned notary in the state of New Jersey, she is committed to accuracy, confidentiality, and efficiency—giving clients a convenient, one-stop solution for multiple service needs while maintaining a strong focus on professionalism and customer care.<br></br>If you have any questions, feel free to contact JD Multiprocess & Services."
+  },
+  "mission": {
+    "heading": "Our mission",
+    "copy": "We are a company dedicated to providing a wide range of services, including online remote notary services, tax return preparation, ITIN application assistance, apostilles, translations, and drafting letters, contracts, requests, and forms, notarization and processing support for divorce documents, wedding officiant services, printing and photocopying, and many other services.<br></br><br></br>Why choose us? Because we work when others are closed—contact us and we’ll help you."
+  },
+  "services": {
+    "taxes": {
+      "title": "Taxes",
+      "copy": "Need help with your taxes? We’re here to help. JD Multiprocess & Services provides tax assistance services focused on document preparation and organization.<br></br>We help clients submit required tax information accurately and on time.<br></br>Our approach is designed to reduce stress during tax season.<br></br>"
+    },
+    "notarizations": {
+      "title": "Notarizations",
+      "copy": "We offer professional remote notarization services in the state of New Jersey, ensuring documents are signed properly and meet state requirements.<br></br>We assist clients with the apostille process by helping prepare documents for international use.<br></br>We also provide loan signing services to support the proper execution of financial documents.<br></br>We can help notarize and submit divorce-related forms, but no legal assistance will be provided."
+    },
+    "weddings": {
+      "title": "Wedding Services",
+      "copy": "We provide document support services related to marriage matters.<br></br>This includes assistance with document preparation and notarization when needed.<br></br>All services are handled with professionalism, discretion, and respect for privacy.<br></br>"
+    },
+    "business": {
+      "title": "Business Formation and Bookkeeping",
+      "copy": "We provide support with business formation to help clients establish their businesses properly.<br></br>We also offer basic bookkeeping services to help with organization and record keeping.<br></br>These services allow business owners to focus on operations while staying organized.<br></br>"
+    },
+    "njLicense": {
+      "title": "New Jersey License Process",
+      "copy": "We assist clients with various New Jersey licensing processes by helping organize required documentation.<br></br>We provide guidance so clients better understand each step of the process.<br></br>This service is designed to reduce confusion and improve overall efficiency.<br></br>"
+    },
+    "translations": {
+      "title": "Translations (Spanish ↔ English)",
+      "copy": "We offer document translation services between Spanish and English.<br></br>These services support personal, business, and administrative needs.<br></br>Translation assistance helps ensure documents are clearly understood in both languages.<br></br>"
+    },
+    "minorTravel": {
+      "title": "Minor Travel Permits",
+      "copy": "We assist with the preparation and notarization of minor travel consent documents.<br></br>This service helps ensure proper authorization is documented when minors travel.<br></br>Parents and guardians gain added peace of mind through accurate documentation.<br></br>"
+    }
+  },
+  "contact": {
+    "heading": "Contact!",
+    "tag": "contact / inquiries",
+    "description": "Do you have questions, inquiries, or want more information about our services? Send a message below!",
+    "placeholders": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Enter Your Message Here"
+    },
+    "submit": "Submit",
+    "success": "Your contact message was sent!",
+    "error": "Your contact message failed to send."
+  }
+}

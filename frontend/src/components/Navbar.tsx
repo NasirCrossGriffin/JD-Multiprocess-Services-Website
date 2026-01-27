@@ -1,3 +1,4 @@
+import LanguageToggle from './LanguageToggle';
 import './styles/Navbar.css'
 
 interface NavbarProps {
@@ -30,9 +31,12 @@ function Navbar({ serviceRefs, scrollToAbout, scrollToHome, scrollToContact }: N
             <button onClick={() => {scrollToService(2)}}><p className='NavLink'>Bodas</p></button>
             <button onClick={() => {scrollToService(3)}}><p className='NavLink'>Contabilidad</p></button>
         </div>
+        <div className='Buttons'>
         <button className='ContactUs' onClick={() => {scrollToContact()}}>
             Contacto
         </button>
+        <LanguageToggle />
+        </div>
       </div>
     </>
   )
