@@ -1,5 +1,7 @@
 import LanguageToggle from './LanguageToggle';
 import './styles/Navbar.css'
+import { useTranslation } from "react-i18next";
+
 
 interface NavbarProps {
   serviceRefs: React.RefObject<(HTMLDivElement | null)[]>;
@@ -17,6 +19,8 @@ function Navbar({ serviceRefs, scrollToAbout, scrollToHome, scrollToContact }: N
     });
   };
 
+  const { t } = useTranslation();
+
   return (
     <>
       <div className='Navbar'>
@@ -24,16 +28,16 @@ function Navbar({ serviceRefs, scrollToAbout, scrollToHome, scrollToContact }: N
             <img src="/Multiprocess_And_Services_Alt.png"/>
         </div>
         <div className='NavLinks'>
-            <button onClick={() => {scrollToHome()}}><p className='NavLink'>Inicio</p></button>
-            <button onClick={() => {scrollToAbout()}}><p className='NavLink'>Sobre</p></button>
-            <button onClick={() => {scrollToService(0)}}><p className='NavLink'>Impuestos</p></button>
-            <button onClick={() => {scrollToService(1)}}><p className='NavLink'>Notary</p></button>
-            <button onClick={() => {scrollToService(2)}}><p className='NavLink'>Bodas</p></button>
-            <button onClick={() => {scrollToService(3)}}><p className='NavLink'>Contabilidad</p></button>
+            <button onClick={() => {scrollToHome()}}><p className='NavLink'>{t("navbar.home")}</p></button>
+            <button onClick={() => {scrollToAbout()}}><p className='NavLink'>{t("navbar.about")}</p></button>
+            <button onClick={() => {scrollToService(0)}}><p className='NavLink'>{t("navbar.taxes")}</p></button>
+            <button onClick={() => {scrollToService(1)}}><p className='NavLink'>{t("navbar.notary")}</p></button>
+            <button onClick={() => {scrollToService(2)}}><p className='NavLink'>{t("navbar.weddings")}</p></button>
+            <button onClick={() => {scrollToService(3)}}><p className='NavLink'>{t("navbar.bookkeeping")}</p></button>
         </div>
         <div className='Buttons'>
         <button className='ContactUs' onClick={() => {scrollToContact()}}>
-            Contacto
+            {t("navbar.contact")}
         </button>
         <LanguageToggle />
         </div>
