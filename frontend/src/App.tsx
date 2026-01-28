@@ -252,8 +252,9 @@ function App() {
           <div className='MissionHeading'>
             {t("mission.heading")}
           </div>
-          <div className='MissionCopy'>
-            {t("mission.copy")}
+          <div className='MissionCopy'
+            dangerouslySetInnerHTML={{ __html: t("mission.copy") }}
+          >
           </div>
           <div className="MissionImage">
             <img src="/Mission_Image.JPG" alt="Mission Image" />
