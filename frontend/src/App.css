@@ -360,6 +360,7 @@
     font-family: "Montserrat", serif;
     font-size: 1.3vw;
     font-weight: 600;
+    color : white
   }
 
   .ServiceHeading {
@@ -414,6 +415,8 @@
       width: 200px;
       padding-top: 20px;
       padding-bottom: 20px;
+      background-color: rgb(35, 57, 115);
+      color : white
   }
 
   .WhiteRectangle {
@@ -433,6 +436,7 @@
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       font-weight: bold;
+      color : white
   }
   .SubmissionBox {
       display: flex;
@@ -453,6 +457,8 @@
       height: 4vw;
       font-size: 20px;
       font-family:  'Montserrat', sans-serif;
+      background-color: rgb(35, 57, 115);
+      color : white
   }
 
 
@@ -461,12 +467,14 @@
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       font-weight: bolder;
+      color : white
   }
 
   .ContactDescription {
       font-size: 20px;
       font-family: 'Montserrat', sans-serif;
       width: 400px;
+      color : white
   }
 
   .SubmissionBox textarea {
@@ -474,6 +482,8 @@
       height: 8vw;
       font-family:  'Montserrat', sans-serif;
       font-size: 15px;
+      background-color: rgb(35, 57, 115);
+      color : white;
   }
 
   .Snapshot {
@@ -496,6 +506,8 @@
       width: 200px;
       padding-top: 20px;
       padding-bottom: 20px;
+      background-color: rgb(35, 57, 115);
+      color : white
   }
 
   .SubmissionAndLinks {
@@ -914,6 +926,7 @@
     font-family: "Montserrat", serif;
     font-size: 2vh;
     font-weight: 600;
+    color : white;
   }
 
   .ServiceHeading {
